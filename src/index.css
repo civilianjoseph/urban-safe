@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Manrope', sans-serif;
+  color: #0f172a;
+  background: #f8fafc;
+  font-synthesis: none;
+}
+
+* { box-sizing: border-box; }
+body { margin: 0; min-width: 320px; background: #f8fafc; }
+button, input, textarea { font: inherit; }
+button { cursor: pointer; }
+
+/* ---- Map visual elements (custom CSS for complex patterns) ---- */
+.map-surface {
+  background: #e8f0ec;
+  background-image:
+    linear-gradient(90deg, #d1e0d8 1px, transparent 1px),
+    linear-gradient(#d1e0d8 1px, transparent 1px);
+  background-size: 80px 80px;
+}
+.map-river {
+  position: absolute;
+  width: 26%;
+  height: 140%;
+  top: -19%;
+  left: 34%;
+  transform: rotate(24deg);
+  background: linear-gradient(180deg, #bae6fd, #93c5fd);
+  opacity: .55;
+  border-left: 2px solid #93c5fd80;
+  border-right: 2px solid #93c5fd80;
+}
+.map-road {
+  position: absolute;
+  height: 3px;
+  background: #cbd5e1;
+  opacity: .6;
+  transform-origin: left;
+}
+.map-road--one { width: 90%; top: 47%; left: -7%; transform: rotate(-21deg); }
+.map-road--two { width: 86%; top: 67%; left: 18%; transform: rotate(18deg); }
+.map-road--three { width: 70%; top: 28%; left: 26%; transform: rotate(65deg); }
+
+@keyframes pulse-ring {
+  0% { box-shadow: 0 0 0 0 currentColor; opacity: .5; }
+  100% { box-shadow: 0 0 0 14px currentColor; opacity: 0; }
+}
+.marker-pulse::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes fade-in { from { opacity: 0; } to { opacity: 1; } }
+@keyframes slide-up { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-in { animation: fade-in .2s ease-out; }
+.animate-slide-up { animation: slide-up .25s ease-out; }
