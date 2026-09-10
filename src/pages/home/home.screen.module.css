@@ -1,0 +1,6 @@
+.root {
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  background: var(--color-slate-50);
+}
