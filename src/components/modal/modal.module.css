@@ -1,0 +1,24 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(15, 23, 42, 0.6); /* Usa o tom escuro do --color-slate-900 com transparência */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 50; /* Garante que fique por cima do mapa e do header */
+  padding: 1rem;
+};
+
+.modalBox {
+  background: var(--color-white); /* Usa sua variável global */
+  border-radius: 0.5rem; /* Mantém a identidade dos botões e inputs */
+  width: 100%;
+  max-width: 500px; /* Evita que o modal fique gigante em telas de PC */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
