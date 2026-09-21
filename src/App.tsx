@@ -1,16 +1,13 @@
-import { AuthProvider, useAuth } from '@/shared/context/auth-context';
-import { AuthScreen } from '@/pages/auth/auth.screen';
-import { HomeScreen } from '@/pages/home/home.screen';
+import { AuthProvider } from '@/shared/context/auth-context';
+import * as AuthModule from '@/pages/auth/auth.screen';
 
-function AppContent() {
-  const { user } = useAuth();
-  return user ? <HomeScreen /> : <AuthScreen />;
-}
+// Obtém o componente quer ele venha como named export ou default export
+const ComponenteAuth = (AuthModule as any).AuthScreen || (AuthModule as any).default;
 
-function App() {
+export function App() {
   return (
     <AuthProvider>
-      <AppContent />
+      <ComponenteAuth />
     </AuthProvider>
   );
 }

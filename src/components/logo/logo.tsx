@@ -8,7 +8,7 @@ export function Logo() {
         <Shield size={20} />
       </span>
       <span className={styles.text}>
-        Urban safe<span className={styles.dot}>.</span>
+        Alerta<span className={styles.dot}>.</span>
       </span>
     </div>
   );
