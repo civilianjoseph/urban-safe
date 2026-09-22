@@ -18,7 +18,7 @@ export function AuthScreen() {
 
         if (isLogin){
             await login(email, password);
-        }else {
+        } else {
             await signup(name, email, password);
         }
     }
