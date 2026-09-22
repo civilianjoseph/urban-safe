@@ -15,7 +15,7 @@ export function AuthScreen() {
 
     async function handleSubmit(e: FormEvent<HTMLFormElement>) {
         e.preventDefault();
-
+        
         if (isLogin){
             await login(email, password);
         }else {
