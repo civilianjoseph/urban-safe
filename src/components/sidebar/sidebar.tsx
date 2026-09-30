@@ -66,7 +66,7 @@ export function Sidebar() {
                 </div>
             </div>
 
-            <Button variant="primary" size="1g" icon={<Plus size={18} />}>
+            <Button variant="primary" size="lg" icon={<Plus size={18} />}>
             Reportar ocorrência
             </Button>
         </aside>
